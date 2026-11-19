@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Mis Finanzas</title>
+<meta name="theme-color" content="#FDEAF0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="Chanchis" />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="icon" type="image/png" href="icon-192.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: { extend: {
+    colors: {
+      blush: {50:'#FFF6F8',100:'#FDEAF0',200:'#F9D5E0',300:'#F3B8CB',400:'#E893AE',500:'#D06D91',600:'#B25276'},
+      lav:   {50:'#F8F5FE',100:'#EFE9FC',200:'#DFD4F7',300:'#C9B8EF',400:'#AB93E1',500:'#8C71CC'},
+      mint:  {50:'#F2FBF6',100:'#E2F6EB',200:'#C7EDD8',300:'#A1DEBE',400:'#6EC89C',500:'#3F9F72'},
+      cream: {50:'#FFFDF9',100:'#FFF8EE',200:'#FBEDD8'},
+      gold:  {200:'#F5E2BC',300:'#EBCB8B',400:'#D9AE5F',500:'#B78A3B'},
+      ink:   {300:'#B3A6B7',400:'#8D7E92',500:'#6D5D72',700:'#4B3C50',900:'#2F2433'}
+    },
+    fontFamily: { display:['Fraunces','Georgia','serif'], sans:['Nunito','system-ui','sans-serif'] },
+    boxShadow: {
+      soft:'0 12px 32px -14px rgba(178,82,118,.28)',
+      lav:'0 12px 32px -14px rgba(140,113,204,.30)',
+      mint:'0 12px 32px -14px rgba(63,159,114,.28)'
+    }
+  } }
+}
+</script>
+<style>
+  html,body{background:#FFF8F3;}
+  body{font-family:Nunito,system-ui,sans-serif;color:#4B3C50;-webkit-tap-highlight-color:transparent;}
+  .bg-dreamy{background:
+    radial-gradient(1200px 500px at 110% -10%, #EFE9FC 0%, transparent 55%),
+    radial-gradient(900px 500px at -20% 10%, #FDEAF0 0%, transparent 55%),
+    radial-gradient(900px 600px at 50% 120%, #E2F6EB 0%, transparent 55%), #FFF9F4;}
+  .no-scrollbar::-webkit-scrollbar{display:none}.no-scrollbar{scrollbar-width:none}
+  @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+  .magic-bar{background:linear-gradient(90deg,#F3B8CB,#C9B8EF,#A1DEBE,#EBCB8B,#F3B8CB);background-size:200% 100%;animation:shimmer 6s linear infinite;}
+  @keyframes twinkle{0%,100%{opacity:.25;transform:scale(.8)}50%{opacity:1;transform:scale(1.1)}}
+  .twinkle{animation:twinkle 2.4s ease-in-out infinite}
+  @keyframes pop{0%{transform:translateY(12px);opacity:0}100%{transform:translateY(0);opacity:1}}
+  .pop{animation:pop .28s ease-out both}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+  .piggy-float{animation:floaty 3.2s ease-in-out infinite}
+  @keyframes jiggle{0%,100%{transform:scale(1,1)}20%{transform:scale(1.07,.93)}40%{transform:scale(.96,1.04)}60%{transform:scale(1.03,.97)}80%{transform:scale(.99,1.01)}}
+  .piggy-jiggle{animation:jiggle .55s ease-out .75s 3}
+  @keyframes sadShake{0%,100%{transform:rotate(0)}20%{transform:rotate(-2.5deg)}40%{transform:rotate(2.5deg)}60%{transform:rotate(-1.5deg)}80%{transform:rotate(1.5deg)}}
+  .piggy-sad{animation:sadShake .8s ease-in-out 2}
+  @keyframes coinDrop{0%{transform:translateY(-150px) rotate(0);opacity:0}10%{opacity:1}68%{transform:translateY(0) rotate(240deg) scale(1,1);opacity:1}84%{transform:translateY(4px) rotate(270deg) scale(.9,.35);opacity:1}100%{transform:translateY(8px) rotate(270deg) scale(.6,.05);opacity:0}}
+  .coin-drop{animation:coinDrop .95s cubic-bezier(.45,.05,.6,1) both}
+  @keyframes billDrop{0%{transform:translateY(-160px) rotate(-20deg);opacity:0}10%{opacity:1}30%{transform:translateY(-110px) rotate(16deg)}50%{transform:translateY(-60px) rotate(-12deg)}70%{transform:translateY(-4px) rotate(4deg) scaleY(1);opacity:1}100%{transform:translateY(6px) rotate(0) scaleY(.05);opacity:0}}
+  .bill-drop{animation:billDrop 1.25s ease-in both}
+  @keyframes tearFall{0%{transform:translateY(-6px) scale(.2);opacity:0}20%{transform:translateY(0) scale(1);opacity:1}100%{transform:translateY(48px) scale(.9);opacity:0}}
+  .tear-fall{animation:tearFall 1.3s ease-in both}
+  @keyframes rise{0%{transform:translateY(10px);opacity:0}20%{opacity:1}75%{opacity:1}100%{transform:translateY(-30px);opacity:0}}
+  .amount-rise{animation:rise 2s ease-out .6s both}
+  @media (prefers-reduced-motion: reduce){.piggy-float,.piggy-jiggle,.piggy-sad{animation:none}}
+  @keyframes sheet{0%{transform:translateY(100%)}100%{transform:translateY(0)}}
+  .sheet{animation:sheet .3s cubic-bezier(.2,.9,.3,1) both}
+  .safe-b{padding-bottom:calc(env(safe-area-inset-bottom) + 8px)}
+  .safe-t{padding-top:calc(env(safe-area-inset-top) + 16px)}
+  input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
+  .num{font-variant-numeric:tabular-nums}
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+</head>
+<body class="bg-dreamy min-h-screen">
+<div id="root"></div>
+<script src="app.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js').catch(function () {}); });
+  }
+</script>
+</body>
+</html>
